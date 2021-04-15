@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://BulletSpawner/BulletSpawner.gd" type="Script" id=1]
+[ext_resource path="res://Bullet/Bullet.tscn" type="PackedScene" id=2]
+
+[node name="BulletSpawner" type="Node2D"]
+position = Vector2( 494.441, 286.177 )
+script = ExtResource( 1 )
+bullet_scene = ExtResource( 2 )
+spawn_rate = 0.2
+bullet_speed = 400
+bullet_lifetime = 4.0
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
